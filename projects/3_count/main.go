@@ -14,8 +14,8 @@ func main() {
 		}
 		if r.Method == http.MethodPost {
 			r.ParseForm()
-			numberString := r.Form.Get("count")
-			a, err := strconv.Atoi(numberString)
+			numStr := r.Form.Get("count")
+			a, err := strconv.Atoi(numStr)
 			if err != nil {
 				w.WriteHeader(http.StatusBadRequest)
 				fmt.Fprintln(w, "это не число")
